@@ -1,0 +1,9 @@
+<% @tasks.each do |task| %>
+<h3><%= link_to task.name.capitalize, task_path(task) %>: </h3>
+<p><strong>Due Date</strong>: <%= task.due_date %> </p>
+<p><strong>Status</strong>: <%= task.status %></p>
+<%= link_to "Update Task", edit_task_path(task)%>
+<%= link_to "Delete Task", task_path(task),
+  method: :delete,
+  data: { confirm: "Are you sure?" } %>
+<% end %>
