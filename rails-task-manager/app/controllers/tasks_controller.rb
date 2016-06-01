@@ -12,8 +12,11 @@ class TasksController < ApplicationController
   end
 
   def create
+    puts 'i am about to create a new task'
     @task = Task.new(task_params)
-    @task.save
+    puts 'i have made a new task object, gonna try save it to the database, fingers crossed'
+    @task.save!
+    puts 'great, it worked!'
     redirect_to task_path
   end
 
